@@ -91,7 +91,6 @@ class Login extends Component {
     const {user} = this.props.user
     console.log(user);
 
-
     return (
       <View className='index'>
         <AtForm>
