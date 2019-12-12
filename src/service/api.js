@@ -20,14 +20,6 @@ export function emailloginapi(data) {
 }
 
 /**
- * 注册
- * @param data
- * @returns {*}
- */
-export function reg(data) {
-  return request(serverUrl+'xxx','get',data)
-}
-/**
  * 首页轮播图
  * @param data
  * @returns {*}
@@ -35,12 +27,13 @@ export function reg(data) {
 export function banner(data) {
   return request(serverUrl+'/banner','get',data)
 }
+
 /**
- * 个人详情
+ * 云村热评
  * @param data
  * @returns {*}
  */
-export function detail(data) {
-  return request(serverUrl+'/user/detail','get',data)
+export function hotwallapi() {
+  return request(serverUrl+'/comment/hotwall/list','get')
 }
 

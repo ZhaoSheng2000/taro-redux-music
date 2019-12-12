@@ -55,50 +55,33 @@ class Login extends Component {
         phone:this.state.username,
         password:this.state.password
       })
-      // reqlogin({
-      //   phone:this.state.username,
-      //   password:this.state.password
-      // })
-      //   .then(res=>{
-      //     console.log(res.data.account.id)
-      //     const uid=res.data.account.id
-      //     const {code}= res.data;
-      //     const {msg}=res.data;
-      //     if (code===400){
-      //       Taro.showToast({
-      //         icon:'none',
-      //         title:'账号不存在！'
-      //       })
-      //     }else if (code===502) {
-      //       Taro.showToast({
-      //         icon:'none',
-      //         title:msg
-      //       })
-      //     }else {
-      //       Taro.showToast({
-      //         title:'登陆成功'
-      //       })
-      //       setToken(uid);
-      //       Taro.redirectTo({url: '/pages/index/index'})
-      //     }
-      //   }).catch(err=>{
-      //   console.log(err)
-      // })
     }
 
   }
   render() {
-    const {user} = this.props.user
-    console.log(user);
+    const {user} = this.props
+    if (user.user.code===200){
+      Taro.showToast({
+        title:'登陆成功'
+      })
+      setToken(user.user.account.id);
+      Taro.navigateBack({url: '/pages/index/index'})
+    }
+    else if (user.message) {
+      Taro.showToast({
+        icon:'none',
+        title:user.message
+      })
+    }
 
-    
+
     return (
       <View className='index'>
         <AtForm>
           <AtInput
             type={'text'}
             placeholder={'请输入手机号'}
-            title={'用户名'}
+            title={'手机'}
             onChange={(e) =>this.setState({username:e})}
           />
           <AtInput

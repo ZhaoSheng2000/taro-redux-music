@@ -21,7 +21,7 @@ class App extends Component {
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      navigationBarBackgroundColor: '#E93B3D',
       navigationBarTitleText: 'Test',
       navigationBarTextStyle: 'black'
     }
