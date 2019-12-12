@@ -21,7 +21,7 @@ import {hotwall} from "../../actions/hotwall";
 class Index extends Component {
 
   config = {
-    navigationBarTitleText: '盛-云音乐'
+    navigationBarTitleText: '云村热评墙'
   }
   state = {
     images: '',
