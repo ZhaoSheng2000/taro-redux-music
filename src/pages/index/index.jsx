@@ -18,6 +18,7 @@ import {hotwall} from "../../actions/hotwall";
 
 
 
+
 class Index extends Component {
 
   config = {
